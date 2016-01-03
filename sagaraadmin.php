@@ -15,6 +15,18 @@ function sagara_theme_style() {
 add_action('admin_enqueue_scripts', 'sagara_theme_style');
 add_action('login_enqueue_scripts', 'sagara_theme_style');
 
+/* Replace Editor CSS */
+add_filter('mce_css', 'sagara_editor_theme_style');
+function sagara_editor_theme_style($url) {
+    if ( !empty($url) ) $url .= ',';
+
+    // Retrieves the plugin directory URL and adds editor stylesheet
+    // Change the path here if using different directories
+    $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/sagaraadmin-editor.css';
+
+    return $url;
+}
+
 /* Remove WP Link in toolbar */
 function remove_wp_menu( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node('wp-logo-default');
