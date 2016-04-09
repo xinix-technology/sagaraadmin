@@ -55,10 +55,15 @@ input[type=checkbox]:checked {
 input[type=checkbox]:checked:before {
 	content: "\f147";
 	position: absolute;
-	top: 2px;
-	left: 2px;
+	top: 0;
+	left: 0;
+	margin: 0;
 	font: 400 16px/1 dashicons;
 	color: #fff;
+}
+table input[type=checkbox]:checked:before {
+	top: -1px;
+	left: -2px;
 }
 input[type=text]:focus,
 input[type=password]:focus,
@@ -194,7 +199,7 @@ select,
 }
 .wp-core-ui .button:hover,
 .wp-core-ui .button.hover {
-	color: #000;
+	color: #fff;
 	background-color: #eaeaea;
 }
 .wp-core-ui .button:active,
@@ -376,6 +381,29 @@ table .status-future * {
 		left: 16px;
 		text-indent: 0;
 	}
+}
+ul.add-menu-item-tabs,
+ul.category-tabs,
+ul.wp-tab-bar {
+	display: table;
+	margin-bottom: 0;
+}
+ul.add-menu-item-tabs li,
+ul.category-tabs li,
+ul.wp-tab-bar li,
+.wp-tab-active,
+ul.add-menu-item-tabs li.tabs,
+ul.category-tabs li.tabs {
+	display: inline-block;
+	padding: 6px 16px 7px;
+	margin-bottom: 0;
+}
+.categorydiv div.tabs-panel,
+.customlinkdiv div.tabs-panel,
+.posttypediv div.tabs-panel,
+.taxonomydiv div.tabs-panel,
+.wp-tab-panel {
+	margin-top: -1px!important;
 }
 
 /* Listing */
@@ -712,13 +740,16 @@ iframe#content_ifr {
 .wrap .add-new-h2:active,
 .wrap .page-title-action,
 .wrap .page-title-action:active {
-	background-color: #FF0080;
 	color: #fff;
+	background-color: #FF0080;
+	display: inline;
+	border: none;
 	padding: 4px 14px 4px 32px;
 	border-radius: 6px;
 }
 .wrap .add-new-h2:hover,
 .wrap .page-title-action:hover {
+	border: none;
 	background-color: #800040;
 }
 .wrap .add-new-h2:before,
@@ -1082,8 +1113,34 @@ ul.cat-checklist {
 	padding-left: 38px;
 }
 
-
 .wp-editor-expand #wp-content-editor-container {
 	border: 1px solid #eee;
 	border-bottom: none;
+}
+
+/* Magic Field */
+.mf_form {
+	padding: 8px 0;
+}
+.tabs-panel .mf_form {
+	padding: 4px 0;
+}
+.mf_form p {
+	margin-left: 0;
+}
+div.mf_form_right div.inside {
+	padding: 0;
+}
+div.mf_form_right div.inside label {
+	margin-top: 2px;
+	font-size: 1em;
+	font-weight: 600;
+	color: #333;
+}
+div.mf_form_right div.inside input[type=checkbox] {
+	width: 16px;
+}
+div.mf_form_right div.inside input,
+div.mf_form_right div.inside textarea {
+	margin-top: 0;
 }
