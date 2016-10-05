@@ -125,7 +125,8 @@ select,
 	border: none;
 	border-radius: 0;
 }
-.wp-core-ui .search-box input {
+.wp-core-ui .search-box input,
+.js.plugins-php .search-box .wp-filter-search {
 	padding: 0 0 0 32px;
 }
 #search-submit {
@@ -199,7 +200,7 @@ select,
 }
 .wp-core-ui .button:hover,
 .wp-core-ui .button.hover {
-	color: #fff;
+	color: #111;
 	background-color: #eaeaea;
 }
 .wp-core-ui .button:active,
@@ -746,6 +747,7 @@ iframe#content_ifr {
 	border: none;
 	padding: 4px 14px 4px 32px;
 	border-radius: 6px;
+	white-space: nowrap;
 }
 .wrap .add-new-h2:hover,
 .wrap .page-title-action:hover {
@@ -853,6 +855,9 @@ textarea#content.wp-editor-area {
 	font: 400 16px/1 dashicons;
 	color: #999;
 	z-index: 9999;
+}
+.wp-filter .search-plugins:before {
+	left: 120px;
 }
 .wp-filter .search-form input[type=search] {
 	padding: 4px 4px 4px 32px;
@@ -1094,7 +1099,7 @@ ul.cat-checklist {
 	position: relative;
 	display: block;
 }
-.themes-php h1:before {
+/*.themes-php h1:before {
 	position: absolute;
 	top: initial;
 	bottom: 11px;
@@ -1105,7 +1110,7 @@ ul.cat-checklist {
 	color: #000;
 	text-indent: 0;
 	pointer-events: none;
-}
+}*/
 .themes-php .wp-filter-search {
 	position: relative;
 	left: 0;
@@ -1143,4 +1148,11 @@ div.mf_form_right div.inside input[type=checkbox] {
 div.mf_form_right div.inside input,
 div.mf_form_right div.inside textarea {
 	margin-top: 0;
+}
+
+.acf-columns-2 {
+	margin-right: 0;
+}
+.acf-columns-2 .acf-column-2 {
+	display: none;
 }

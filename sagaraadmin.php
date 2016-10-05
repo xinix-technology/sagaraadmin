@@ -41,10 +41,11 @@ function add_sagara_toolbar() {
 	$args = array(
 		'id'     => 'about-menu',
 		'parent' => 'wp-logo',
-		'title'  => __( 'About Sagara Retail', 'text_domain' ),
-		'href'   => 'http://retail.sagara.id',
+		'title'  => __( 'About Sagara', 'text_domain' ),
+		'href'   => 'http://sagara.id',
 		'meta'   => array(
 			'class'    => 'about',
+			'target'   => 'BLANK'
 		),
 	);
 	$wp_admin_bar->add_menu( $args );
@@ -52,10 +53,11 @@ function add_sagara_toolbar() {
 	$args = array(
 		'id'     => 'dashboard-menu',
 		'parent' => 'wp-logo',
-		'title'  => __( 'Contact Sagara Retail', 'text_domain' ),
-		'href'   => 'http://retail.sagara.id/contact',
+		'title'  => __( 'Contact Sagara', 'text_domain' ),
+		'href'   => 'http://sagara.id/p/contact-us',
 		'meta'   => array(
 			'class'    => 'contact',
+			'target'   => 'BLANK'
 		),
 	);
 	$wp_admin_bar->add_menu( $args );
@@ -82,7 +84,7 @@ add_filter('user_contactmethods', 'sagara_contacts');
 /* Replace the left footer */
 add_filter('admin_footer_text', 'left_admin_footer_text_output');
 function left_admin_footer_text_output($text) {
-    $text = 'Theme by <a href="http://sagara.id">Sagara</a> &copy; ' . date("Y");
+    $text = 'Theme by <a href="http://sagara.id" target="BLANK">Sagara</a> &copy; ' . date("Y");
     return $text;
 }
 /* Replace the right footer */
